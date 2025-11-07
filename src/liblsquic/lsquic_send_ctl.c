@@ -140,8 +140,6 @@ split_lost_packet (struct lsquic_send_ctl *, struct lsquic_packet_out *const);
 
 #ifdef NDEBUG
 static
-#elif __GNUC__
-__attribute__((weak))
 #endif
 int
 lsquic_send_ctl_schedule_stream_packets_immediately (lsquic_send_ctl_t *ctl)
@@ -152,8 +150,6 @@ lsquic_send_ctl_schedule_stream_packets_immediately (lsquic_send_ctl_t *ctl)
 
 #ifdef NDEBUG
 static
-#elif __GNUC__
-__attribute__((weak))
 #endif
 enum packno_bits
 lsquic_send_ctl_guess_packno_bits (lsquic_send_ctl_t *ctl)
@@ -1767,11 +1763,6 @@ send_ctl_can_send_pre_hsk (struct lsquic_send_ctl *ctl)
 }
 
 
-#ifndef NDEBUG
-#if __GNUC__
-__attribute__((weak))
-#endif
-#endif
 int
 lsquic_send_ctl_can_send (struct lsquic_send_ctl *ctl)
 {
@@ -2583,11 +2574,6 @@ lsquic_send_ctl_elide_stream_frames (lsquic_send_ctl_t *ctl,
  * lsquic_send_ctl_squeeze_sched().  This is the number of delayed data
  * packets.
  */
-#ifndef NDEBUG
-#if __GNUC__
-__attribute__((weak))
-#endif
-#endif
 int
 lsquic_send_ctl_have_delayed_packets (const lsquic_send_ctl_t *ctl)
 {
@@ -2764,8 +2750,6 @@ lsquic_send_ctl_drop_scheduled (lsquic_send_ctl_t *ctl)
 
 #ifdef NDEBUG
 static
-#elif __GNUC__
-__attribute__((weak))
 #endif
 enum buf_packet_type
 lsquic_send_ctl_determine_bpt (lsquic_send_ctl_t *ctl,
@@ -3042,8 +3026,6 @@ lsquic_sendctl_gen_stream_blocked_frame (struct lsquic_send_ctl *ctl,
 
 #ifdef NDEBUG
 static
-#elif __GNUC__
-__attribute__((weak))
 #endif
 enum packno_bits
 lsquic_send_ctl_calc_packno_bits (lsquic_send_ctl_t *ctl)
